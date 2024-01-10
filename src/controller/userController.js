@@ -180,9 +180,10 @@ let resetPassword = async (req, res) => {
         message: "Fail",
       });
     } else {
+      let hashPassword = bcrypt.hashSync(password, salt);
       await sql.User.update(
         {
-          password: password,
+          password: hashPassword,
         },
         {
           where: {
