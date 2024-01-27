@@ -1,9 +1,14 @@
 const { Sequelize } = require("sequelize");
 
-const sequelize = new Sequelize("web_app_db", "postgres", "12345", {
-  host: "localhost",
-  dialect: "postgres",
-});
+const sequelize = new Sequelize(
+  "postgres",
+  "postgres.riynwtbduiydbvtbesha",
+  "ehSNR59nR5OMstJY",
+  {
+    host: "aws-0-ap-southeast-1.pooler.supabase.com",
+    dialect: "postgres",
+  }
+);
 
 const connectionSequelize = async () => {
   try {
