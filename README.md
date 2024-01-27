@@ -22,6 +22,8 @@ Account name: NGUYEN VAN A
 
 Release date: 03/07
 
+OTP Code: OTP
+
 ## Installation Guide
 
 Open PostgreSQL (pgAdmin 4) and run the attached fruitkha.sql file to create a database named web_app_db with available data.
