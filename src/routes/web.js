@@ -166,4 +166,6 @@ router.delete("/delete-comment/:commentId", HomeController.deleteComment);
 
 router.put("/update-comment", HomeController.updateComment);
 
+router.post("/chat-with-ai", HomeController.chatBotAI);
+
 module.exports = router;

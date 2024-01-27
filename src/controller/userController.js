@@ -5,6 +5,11 @@ const fs = require("fs");
 const sql = require("../models/index.js");
 const { Op } = require("sequelize");
 var bcrypt = require("bcryptjs");
+const OpenAI = require("openai").OpenAI;
+
+const openai = new OpenAI({
+  apiKey: process.env.OPENAI_API_KEY,
+});
 
 const salt = bcrypt.genSaltSync(10);
 
@@ -712,6 +717,24 @@ let deleteComment = async (req, res) => {
   });
 };
 
+let chatBotAI = async (req, res) => {
+  try {
+    let prompt = req.body.message;
+
+    let chatCompletion = await openai.chat.completions.create({
+      messages: [{ role: "user", content: prompt }],
+      model: "gpt-3.5-turbo",
+    });
+
+    return res.status(200).json({
+      errCode: 0,
+      chatBotMessage: chatCompletion.choices[0].message.content,
+    });
+  } catch (error) {
+    console.error(error);
+  }
+};
+
 module.exports = {
   registerUser,
   loginUser,
@@ -737,4 +760,5 @@ module.exports = {
   getAllCommentsByNewId,
   updateComment,
   deleteComment,
+  chatBotAI,
 };
