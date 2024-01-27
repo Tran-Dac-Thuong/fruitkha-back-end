@@ -18,7 +18,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(
   cors({
-    origin: "https://fruitkha-three.vercel.app/",
+    origin: "https://fruitkha-three.vercel.app",
   })
 );
 
