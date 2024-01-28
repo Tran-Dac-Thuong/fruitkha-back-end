@@ -532,8 +532,8 @@ let momoPaymentController = async (req, res) => {
   var requestId = partnerCode + new Date().getTime();
   var orderId = requestId;
   var orderInfo = "pay with MoMo";
-  var redirectUrl = "https://fruitkha-three.vercel.app";
-  var ipnUrl = "https://fruitkha-three.vercel.app";
+  var redirectUrl = "http://localhost:3000/success";
+  var ipnUrl = "http://localhost:3000/success";
   // var ipnUrl = redirectUrl = "https://webhook.site/454e7b77-f177-4ece-8236-ddf1c26ba7f8";
   var amount = cost;
   var requestType = "payWithATM";

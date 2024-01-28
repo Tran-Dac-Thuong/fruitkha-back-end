@@ -189,7 +189,7 @@ let searchProductByName = async (req, res) => {
     },
   });
 
-  if (productsByName) {
+  if (productsByName.length > 0) {
     return res.status(200).json({
       message: "OK",
       search_product: productsByName,
@@ -366,7 +366,7 @@ let searchNewsByDate = async (req, res) => {
     },
   });
 
-  if (newsByDate) {
+  if (newsByDate.length > 0) {
     return res.status(200).json({
       message: "OK",
       search_news: newsByDate,
@@ -436,7 +436,7 @@ let searchContactsByDate = async (req, res) => {
     },
   });
 
-  if (contactByDate) {
+  if (contactByDate.length > 0) {
     return res.status(200).json({
       message: "OK",
       search_contacts: contactByDate,
@@ -496,7 +496,7 @@ let searchProductByStatus = async (req, res) => {
     },
   });
 
-  if (productsByStatus) {
+  if (productsByStatus.length > 0) {
     return res.status(200).json({
       message: "OK",
       search_product_by_status: productsByStatus,
@@ -614,7 +614,7 @@ let searchOrdersByDate = async (req, res) => {
     ],
   });
 
-  if (orderByDate) {
+  if (orderByDate.length > 0) {
     return res.status(200).json({
       message: "OK",
       search_orders: orderByDate,
