@@ -47,7 +47,7 @@ let sendEmailToResetPassword = async (userId, email, token) => {
     html: `<p>Dear User,</p>
     <p>A request to reset the password for your account has been made at Fruitkha.</p>
     <p>You may now log in by clicking this link or copying and pasting it to your browser:</p>
-    <p>http://localhost:3000/reset-password/${userId}/${token}</p>
+    <p>https://fruitkha-three.vercel.app/reset-password/${userId}/${token}</p>
     <p>NOTE: This link can only be used once to log in and will lead you to a page where you can set your password. It expires after one day and nothing will happen if it's not used.</p>
     <p>Regards,</p>
     <p>Fruitkha Team</p>`, // html body
