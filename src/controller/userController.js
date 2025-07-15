@@ -8,6 +8,7 @@ var bcrypt = require("bcryptjs");
 const OpenAI = require("openai").OpenAI;
 
 const openai = new OpenAI({
+  baseURL: "https://models.github.ai/inference",
   apiKey: process.env.OPENAI_API_KEY,
 });
 
@@ -723,7 +724,7 @@ let chatBotAI = async (req, res) => {
 
     let chatCompletion = await openai.chat.completions.create({
       messages: [{ role: "user", content: prompt }],
-      model: "gpt-3.5-turbo",
+      model: "openai/gpt-4.1",
     });
 
     return res.status(200).json({
