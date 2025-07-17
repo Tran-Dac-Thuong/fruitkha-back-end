@@ -24,6 +24,16 @@ Release date: 03/07
 
 OTP Code: OTP
 
-## Installation Guide
+## Build Setup
+
+- Node.js >= 18
+
+```bash
+# install dependencies
+npm i
+
+# serve with hot reload
+npm start
+```
 
 Open PostgreSQL (pgAdmin 4) and run the attached fruitkha.sql file to create a database named web_app_db with available data.
